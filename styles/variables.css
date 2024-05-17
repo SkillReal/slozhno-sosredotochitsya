@@ -1,4 +1,36 @@
-/*
-  Переменные для вашего проекта
-  и их переопределение под различные устройства
-*/
+:root {
+  --color-dark-blue: #000028;
+  --color-mauveine: #ff0070;
+  --color-magenta: #db00ff;
+  --color-lavender-crayola: #f1b2ce;
+  --color-pink-lavender: #fff1f7;
+  --color-cotton-candy: #ffc2e6;
+  --color-shiny-purplish-pink: #ff8dcb;
+  --color-dark-greenish-yellow-green: #353430;
+  --color-mauveine-opacity: #ff007040;
+  --color-dark-greenish-yellow-green-opacity: #35343040;
+
+  --big-title-color: var(--color-magenta, #db00ff);
+  --small-title-color: var(--color-mauveine, #ff0070);
+  --main-text-color: var(--color-lavender-crayola, #f1b2ce);
+  --accent-color: var(--color-mauveine, #ff0070);
+  --highlight-text-color: var(--color-dark-blue, #000028);
+  --bg-color: var(--color-dark-blue, #000028);
+  --bg-image: url("../images/cover-image-dark.png");
+  --menu-hower-color: var(--color-mauveine-opacity, #ff007040);
+
+  --font-family: "IBM Plex mono", monospase;
+
+  --global-padding: 10px;
+  --vertical-padding: 40px;
+  --display-rec-circle: block;
+  --button-menu-margin: 65px;
+  --button-menu-position: end;
+  --button-menu-direction: column;
+  --page-title-fs: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --page-title-margin: 0;
+  --title-descriptption-inline-size: 355px;
+  --title-descriptption-margin: 54px;
+  --main-section-gap: 50px;
+  --picture-gap: 10px;
+}

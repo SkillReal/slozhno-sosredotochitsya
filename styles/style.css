@@ -1,5 +1,284 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  font-family: var(--font-family, "IBM Plex mono", monospase);
+  font-size: 18px;
+  line-height: 1.3;
+  color: var(--main-text-color, #f1b2ce);
+  background-color: var(--bg-color, #000028);
+  background-image: var(--bg-image, url("../images/cover-image-dark.png"));
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.header {
+  padding: var(--global-padding, 10px);
+  block-size: max(100vb, 668px);
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr auto 1fr;
+  align-items: start;
+  justify-items: end;
+}
+
+.rec-circle {
+  display: var(--display-rec-circle, block);
+  position: absolute;
+}
+
+.rec-circle::before {
+  content: "REC";
+  position: absolute;
+  color: var(--accent-color, #ff0070);
+  inset-inline-end: calc(var(--global-padding, 10px) + 28px);
+  inset-block-start: var(--global-padding, 10px);
+}
+
+.rec-circle::after {
+  content: "";
+  position: absolute;
+  block-size: 9px;
+  inline-size: 9px;
+  box-shadow: 0 0 4px 2px var(--accent-color, #ff0070);
+  border-radius: 50%;
+  background-color: var(--accent-color, #ff0070);
+  inset-inline-end: calc(var(--global-padding, 10px) + 9px);
+  inset-block-start: calc(var(--global-padding, 10px) + 8px);
+}
+
+.decorated-zone::before {
+  content: "";
+  position: absolute;
+  display: block;
+  block-size: 25px;
+  inline-size: 25px;
+  inset-inline-end: var(--global-padding, 10px);
+  inset-block-start: var(--global-padding, 10px);
+  border-inline-end: 1px solid var(--small-title-color, #ff0070);
+  border-block-start: 1px solid var(--small-title-color, #ff0070);
+}
+
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  display: block;
+  block-size: 25px;
+  inline-size: 25px;
+  inset-inline-start: var(--global-padding, 10px);
+  inset-block-end: var(--global-padding, 10px);
+  border-inline-start: 1px solid var(--small-title-color, #ff0070);
+  border-block-end: 1px solid var(--small-title-color, #ff0070);
+}
+
+.header__theme-menu {
+  margin-block-start: var(--button-menu-margin, 65px);
+  justify-self: var(--button-menu-position, end);
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: var(--button-menu-direction, column);
+  gap: 13px;
+}
+
+.header__theme-menu-button {
+  border: none;
+  color: var(--small-title-color, #ff0070);
+  padding: 0px 13px;
+  background-color: transparent;
+  text-transform: lowercase;
+  cursor: pointer;
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--menu-hower-color, #ff007040);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end: 1px solid var(--small-title-color, #ff0070);
+}
+
+.header__theme-menu-button_active {
+  outline: 1px solid var(--small-title-color, #ff0070);
+  pointer-events: none;
+}
+
+.page_title {
+  justify-self: start;
+  color: var(--big-title-color, #db00ff);
+  text-shadow: 4px 4px 0px var(--accent-color, #ff0070);
+  font-size: var(--page-title-fs, clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem));
+  line-height: 0.825;
+  font-weight: bold;
+  margin-inline-start: var(--page-title-margin, 0);
+}
+
+.title_descriptption {
+  justify-self: end;
+  margin-block-start: var(--title-descriptption-margin, 54px);
+  max-inline-size: var(--title-descriptption-inline-size, 355px);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--main-section-gap, 50px);
+  padding: var(--vertical-padding, 40px) var(--global-padding, 10px);
+}
+
+.section {
+  display: grid;
+  gap: 20px;
+}
+
+.section-title {
+  color: var(--small-title-color, #ff0070);
+  font-size: inherit;
+  font-weight: bold;
+}
+
+.section-card {
+  display: grid;
+  gap: 10px;
+}
+
+.title-decor {
+  color: var(--highlight-text-color, #ff0070);
+  font-size: inherit;
+  background-color: var(--accent-color, #ff8dcb);
+}
+
+.title-decor:not(h4) {
+  font-weight: bold;
+}
+
+.title-decor:not(h3, h2, p) {
+  font-weight: normal;
+}
+
+.section-card-subtitle {
+  margin-block-end: 10px;
+}
+
+.link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--accent-color, #ff0070);
+}
+
+.link:hover {
+  border-block-end: 1px solid var(--main-text-color, #f1b2ce);
+}
+
+.link:focus {
+  outline: none;
+}
+
+.link:focus-visible {
+  outline: 1px solid var(--main-text-color, #f1b2ce);
+}
+
+.focus-picture {
+  display: grid;
+  grid-template-rows: auto 142px 355px 237px 355px 237px;
+  gap: var(--picture-gap, 10px);
+}
+
+.picture-card {
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.picture-card-item {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: var(--global-padding, 10px);
+  block-size: max(100vb, 668px);
+}
+
+@media (768px <= width) {
+  :root {
+    --global-padding: 20px;
+    --vertical-padding: 60px;
+    --page-title-fs: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    --button-menu-margin: 171px;
+    --page-title-margin: -20px;
+    --title-descriptption-inline-size: 364px;
+    --title-descriptption-margin: 163px;
+    --main-section-gap: 80px;
+    --picture-gap: 20px;
+  }
+
+  .section:not(.focus-picture) {
+    grid-template-columns: 236px 1fr 1fr;
+  }
+
+  .focus-difficult .section-card,
+  .focus-increase .section-card {
+    grid-column: 2/6;
+  }
+
+  .focus-reduce .section-card {
+    grid-column: span 3;
+  }
+
+  .focus-picture {
+    grid-template-rows: auto 192px 230px 318px;
+  }
+
+  .focus-picture h2 {
+    grid-column: span 3;
+  }
+
+  .picture-card:first-of-type,
+  .picture-card:last-of-type {
+    grid-column: span 2;
+  }
+
+  .picture-card:nth-of-type(2),
+  .picture-card:nth-of-type(3) {
+    grid-row: span 2;
+  }
+
+  .page_title:not(h1) {
+    margin-inline-start: 0;
+  }
+}
+
+@media (1024px <= width) {
+  :root {
+    --button-menu-direction: row;
+    --button-menu-margin: 0;
+    --button-menu-position: center;
+    --title-descriptption-inline-size: 491px;
+    --title-descriptption-margin: 114px;
+  }
+
+  .section:not(.focus-picture) {
+    grid-template-columns: 315px 1fr 1fr;
+  }
+
+  .focus-reduce .section-card {
+    grid-column: span 1;
+    grid-row: 2/2;
+    align-self: start;
+  }
+
+  .focus-picture {
+    grid-template-rows: auto 260px 315px 428px;
+  }
 }
