@@ -223,7 +223,7 @@
     grid-template-columns: 236px 1fr 1fr;
   }
 
-  .section:not(.focus-picture,.focus-reduce) h2 {
+  .section:not(.focus-picture, .focus-reduce) h2 {
     grid-row: span 2;
   }
 
