@@ -162,10 +162,6 @@
   font-weight: normal;
 }
 
-.section-card-subtitle {
-  margin-block-end: 10px;
-}
-
 .link {
   text-decoration: none;
   text-shadow: 2px 2px 0 var(--accent-color, #ff0070);
@@ -227,13 +223,22 @@
     grid-template-columns: 236px 1fr 1fr;
   }
 
+  .section:not(.focus-picture,.focus-reduce) h2 {
+    grid-row: span 2;
+  }
+
   .focus-difficult .section-card,
   .focus-increase .section-card {
-    grid-column: 2/6;
+    grid-column: 2/4;
   }
 
   .focus-reduce .section-card {
     grid-column: span 3;
+  }
+
+  .section-card-subtitle {
+    grid-column: span 2;
+    align-self: start;
   }
 
   .focus-picture {
